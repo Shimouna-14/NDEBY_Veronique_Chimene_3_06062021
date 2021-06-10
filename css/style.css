@@ -1,3 +1,16 @@
-
+@font-face {
+  font-family: "Text";
+  font-weight: 400;
+  src: url(../../font/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "Text";
+  font-weight: 100;
+  src: url(../../font/Roboto-Thin.ttf);
+}
+@font-face {
+  font-family: "Titre";
+  src: url(../../font/Shrikhand-Regular.ttf);
+}
 
 /*# sourceMappingURL=style.css.map */
