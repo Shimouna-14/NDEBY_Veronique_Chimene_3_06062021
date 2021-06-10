@@ -1,8 +1,15 @@
+body{
+    font-family: "Text";
+    padding: 0;
+    margin: 0;
+}
+
 $purple: #9356DC;
 $pink: #FF79DA;
 $blue: #99E2D0;
 $l-gray: #f6f6f6;
 $d-gray: #eaeaea;
+$white: white;
 
 @font-face {
     font-family: "Text";
@@ -16,7 +23,7 @@ $d-gray: #eaeaea;
     src: url(../../font/Roboto-Thin.ttf);
 }
 
-@font-face {
-    font-family: "Titre";
-    src: url(../../font/Shrikhand-Regular.ttf);
+a{
+    text-decoration: none;
+    color: initial;
 }

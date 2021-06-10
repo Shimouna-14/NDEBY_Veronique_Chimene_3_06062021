@@ -1,0 +1,10 @@
+@mixin 
+head{
+    height: 65px;
+    font-family: "Titre";
+}
+
+@font-face {
+    font-family: "Titre";
+    src: url(../../font/Shrikhand-Regular.ttf);
+}

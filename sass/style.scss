@@ -1,2 +1,68 @@
 @import "base/graphic.scss";
+@import "utils/center.scss";
+@import "layout/header.scss";
+@import "utils/responsive.scss";
 
+header{
+    @include head;
+    @include center-element;
+}
+
+.city{
+    background-color: $d-gray;
+    height: 50px;
+    @include center-element;
+    h4{font-weight: 400;}
+}
+
+.descriptive{
+    background-color: $l-gray;
+    height: 290px;
+    @include center-element;
+    justify-content: initial;
+    flex-direction: column;
+    h3{
+        
+        text-align: center;
+        margin: 45px 65px 0 65px;
+
+    }
+    p{
+        text-align: center;
+        margin: 20px 20px 30px 20px;
+        font-weight: lighter;
+    }
+    button{
+        width: 218px;
+        height: 50px;
+        border-radius: 25px;
+        border: none;
+        color: $white;
+        background: linear-gradient(0deg, $purple 0%, rgba(255,121,218,0.6568848758465011) 100%);        font-family: "Text";
+        font-size: 16px;
+        cursor: pointer;
+
+        position: relative;
+        z-index: 1;
+        transition: background 250ms;
+        &:hover{
+            &::after{
+                opacity: 1;
+            }
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(lighten(rgba(255,121,218,0.6568848758465011), 10%), lighten($purple, 15%));
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;
+            border-radius: 25px;
+
+        }
+    }
+}
