@@ -13,64 +13,99 @@ header{
 }
 
 .city{
+    @include center-element;
     background-color: $d-gray;
     height: 50px;
-    @include center-element;
-    h4{font-weight: 400;}
+    h4{font-weight: normal;}
 }
 
 .descriptive{
+    @include center-element;
     background-color: $l-gray;
     height: 290px;
-    @include center-element;
     justify-content: initial;
     flex-direction: column;
     h3{
-        
         text-align: center;
         margin: 45px 65px 0 65px;
-
     }
     p{
         text-align: center;
         margin: 20px 20px 30px 20px;
-        font-weight: lighter;
+        font-weight: 100;
     }
-    button{
-        @include btn;
-    }
+    button{@include btn;}
 }
 
 .function{
     height: 400px;
-    h3{
-        margin: 50px 0 30px 15px;
-        text-align: left;
-    }
-
+    h3{margin: 50px 0 30px 15px;}
     &-step{
         @include center-element;
         flex-direction: column;
         & .step{
-            width: 280px;
+            @include center-element;
+            width: 88%;
             height: 75px;
             margin-bottom: 25px;
             background-color: $l-gray;
             border-radius: $border-r;
             position: relative;
-            @include center-element;
-            }
         }
-
-
+    }
     & .dots{
+        @include center-element;
         width: 25px;
         height: 25px;
         background-color: $purple;
         border-radius: $border-r;
         position: absolute;
         left: -12px;
-        @include center-element;
         color: $white;
+    }
+}
+
+.restaurant{
+    flex-direction: column;
+    height: 1225px;
+    background-color: $l-gray;
+    h3{
+        padding: 60px 0 28px 15px;
+        margin: 0;
+    }
+    &-board{
+        @include center-element;
+        flex-direction: column;
+        & .board{
+            margin-bottom: 20px;
+            width: 92%;
+            height: 255px;
+            background-color: $white;
+            border-radius: $border-r;
+            position: relative;
+            & .new{
+                @include center-element;
+                width: 80px;
+                height: 30px;
+                background-color: $blue;
+                color: darken($blue, 40%);
+                font-size: 14px;
+                position: absolute;
+                right: 12px;
+                top: 12px;
+            }
+            img{
+                height: 175px;
+                width: 100%;
+                border-top-left-radius: $border-r;
+                border-top-right-radius: $border-r;
+                object-fit: cover;            
+            }
+            h4{margin: 15px 0 0 15px;}
+            p{
+                margin: 5px 0 0 15px;
+                font-weight: 100;
+            }
+        }
     }
 }

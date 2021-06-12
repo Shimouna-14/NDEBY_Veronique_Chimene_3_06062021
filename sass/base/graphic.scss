@@ -25,6 +25,12 @@ $border-r: 25px;
     src: url(../../font/Roboto-Thin.ttf);
 }
 
+@font-face {
+    font-family: "Text";
+    font-weight: 700;
+    src: url(../../font/Roboto-Bold.ttf);
+}
+
 a{
     text-decoration: none;
     color: initial;
