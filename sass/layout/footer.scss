@@ -1,0 +1,25 @@
+@mixin foot{
+    height: 195px;
+    background-color: #353535;
+    color: white;
+    font-family: "Titre";
+    h3{
+        margin: 0;
+        padding: 20px 0 20px 20px;
+    }
+    ul{
+        padding-left: 20px;
+        margin: 0;
+        font-family: "Text";
+        list-style: none;
+    }
+    li{
+        padding-bottom: 10px;
+        &>a{
+            color: $white;
+            &.bold{
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@
 @import "utils/responsive.scss";
 
 @import "layout/header.scss";
+@import "layout/footer.scss";
 
 @import "composents/button.scss";
 
@@ -23,11 +24,10 @@ header{
     @include center-element;
     background-color: $l-gray;
     height: 290px;
-    justify-content: initial;
     flex-direction: column;
     h3{
         text-align: center;
-        margin: 45px 65px 0 65px;
+        margin: 0px 65px;
     }
     p{
         text-align: center;
@@ -109,3 +109,5 @@ header{
         }
     }
 }
+
+footer{@include foot;}
