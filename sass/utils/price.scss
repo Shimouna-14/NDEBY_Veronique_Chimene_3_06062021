@@ -1,0 +1,16 @@
+@mixin price {
+    display: flex;
+    justify-content: space-between;
+        > p:first-child{
+            margin: 10px 0 0 15px;
+            font-weight: 100;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    
+        > p:nth-child(2){
+            font-weight: 700; 
+            margin: 10px 15px 0 0;
+        }
+}

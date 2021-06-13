@@ -10,8 +10,9 @@ $blue: #99E2D0;
 $l-gray: #f6f6f6;
 $d-gray: #eaeaea;
 $white: white;
-
 $border-r: 25px;
+$shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+
 
 @font-face {
     font-family: "Text";
@@ -39,4 +40,9 @@ $border-r: 25px;
 a{
     text-decoration: none;
     color: initial;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
 }
