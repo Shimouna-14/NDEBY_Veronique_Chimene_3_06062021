@@ -345,7 +345,10 @@ footer li > a.bold {
   cursor: pointer;
 }
 .plan .menu .card section h4 {
-  margin: 10px 0 0 15px;
+  margin: 12px 10px 0 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .plan .menu .card section .txt {
   display: flex;
