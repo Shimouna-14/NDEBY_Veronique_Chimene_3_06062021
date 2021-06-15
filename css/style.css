@@ -278,19 +278,16 @@ footer li > a.bold {
 
 .plan {
   background-color: #f6f6f6;
-  border-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   margin-top: -50px;
+  padding-bottom: 50px;
   position: relative;
   z-index: 2;
 }
 @media screen and (max-width: 768px) {
   .plan {
     height: 1195px;
-  }
-}
-@media screen and (min-width: 769px) {
-  .plan {
-    height: 550px;
   }
 }
 .plan h2 {

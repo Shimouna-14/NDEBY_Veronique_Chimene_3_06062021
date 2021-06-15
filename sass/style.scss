@@ -143,12 +143,13 @@ main{
 
 .plan{
     background-color: $l-gray;
-    border-radius: $border-r;
+    border-top-left-radius: $border-r;
+    border-top-right-radius: $border-r;
     margin-top: -50px;
+    padding-bottom: 50px;
     position: relative;
     z-index: 2;
     @include tablet{height: 1195px;}
-    @include large{height: 550px;}
     h2{
         margin: 0;
         padding: 30px 35px 35px 20px;
