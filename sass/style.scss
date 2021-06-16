@@ -3,6 +3,7 @@
 @import "utils/center.scss";
 @import "utils/price.scss";
 @import "utils/responsive.scss";
+@import "utils/icon.scss";
 
 @import "layout/header.scss";
 @import "layout/footer.scss";
@@ -55,7 +56,7 @@ footer{@include foot;}
         @include center-element;
         @include tablet{flex-direction: column;}
         @include large{justify-content: space-around}
-        & .step{
+        .step{
             @include center-element;
             box-shadow: $shadow;
             background-color: $l-gray;
@@ -65,14 +66,17 @@ footer{@include foot;}
                 width: 88%;
                 height: 75px;
                 margin-bottom: 25px;
+                justify-content: space-around;
             }
             @include large{
                 width: 230px;
-                height: 150px;
+                height: 110px;
+                padding-top: 20px;
+                flex-direction: column;
             }
         }
     }
-    & .dots{
+    .dots{
         @include center-element;
         width: 25px;
         height: 25px;
@@ -99,7 +103,7 @@ footer{@include foot;}
             flex-wrap: wrap;
             justify-content: space-around;
         }
-        & .board{
+        .board{
             margin-bottom: 20px;
             background-color: $white;
             border-radius: $border-r;
@@ -108,7 +112,7 @@ footer{@include foot;}
             position: relative;
             @include tablet{width: 92%;}
             @include large{width: 45%;}
-            & .new{
+            .new{
                 @include center-element;
                 width: 80px;
                 height: 30px;
@@ -129,13 +133,18 @@ footer{@include foot;}
                 margin: 5px 0 0 15px;
                 font-weight: 100;
             }
+            .fa-heart{
+                position: absolute;
+                right: 25px;
+                bottom: 35px;
+            }
         }
     }
 }
 
 //--------------------------------------Menu--------------------------------------
 main{
-    & > img{
+    > img{
         @include tablet{height: 250px;}
         @include large{height: 300px;}
     }
@@ -146,10 +155,8 @@ main{
     border-top-left-radius: $border-r;
     border-top-right-radius: $border-r;
     margin-top: -50px;
-    padding-bottom: 50px;
     position: relative;
     z-index: 2;
-    @include tablet{height: 1195px;}
     h2{
         margin: 0;
         padding: 30px 35px 35px 20px;
@@ -160,13 +167,13 @@ main{
             display: flex;
             justify-content: space-around;
         }
-        & .card{
+        .card{
             @include large{width: 28%;}
             &-plan{
                 @include center-element;
-                flex-direction: column;    
+                flex-direction: column; 
             }
-            & > h4{
+            > h4{
                 margin: 0 0 15px 20px;
                 padding-bottom: 10px;
                 font-weight: 100;
@@ -195,6 +202,6 @@ main{
     }
     #btn{
         @include center-element;
-        margin-top: 50px;
+        padding: 50px 0;
     }
 }
