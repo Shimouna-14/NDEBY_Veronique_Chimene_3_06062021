@@ -194,7 +194,7 @@ main{
                 height: 70px;
                 margin-bottom: 15px;
                 border-radius: $border-r - 10px;
-                box-shadow: $shadow;
+                box-shadow: $shadow;            
                 @include phone{width: 90%;}
                 @include tablet{width: 90%;}
                 @include large{width: 100%;}
