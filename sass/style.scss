@@ -4,6 +4,7 @@
 @import "utils/price.scss";
 @import "utils/responsive.scss";
 @import "utils/icon.scss";
+@import "utils/animation.scss";
 
 @import "layout/header.scss";
 @import "layout/footer.scss";
@@ -16,13 +17,16 @@ header{
     @include head;
     @include center-element;
 }
+
 //--------------------------------------Button--------------------------------------
 button{
     @include btn;
     box-shadow: $shadow;
 }
+
 //--------------------------------------Footer--------------------------------------
 footer{@include foot;}
+
 //--------------------------------------Acceuil--------------------------------------
 .city{
     @include center-element;
@@ -54,6 +58,7 @@ footer{@include foot;}
     h3{margin: 50px 0 30px 15px;}
     &-step{
         @include center-element;
+        @include phone{flex-direction: column;}
         @include tablet{flex-direction: column;}
         @include large{justify-content: space-around}
         .step{
@@ -62,10 +67,16 @@ footer{@include foot;}
             background-color: $l-gray;
             border-radius: $border-r;
             position: relative;
-            @include tablet{
+            @include phone{
                 width: 88%;
                 height: 75px;
                 margin-bottom: 25px;
+                justify-content: space-around;
+            }
+            @include tablet{
+                width: 50%;
+                height: 75px;
+                margin-bottom: 40px;
                 justify-content: space-around;
             }
             @include large{
@@ -91,18 +102,15 @@ footer{@include foot;}
 .restaurant{
     flex-direction: column;
     background-color: $l-gray;
-    @include tablet{height: 1225px;}
     h3{
         padding: 60px 0 28px 15px;
         margin: 0;
     }
     &-board{
         @include center-element;
-        @include tablet{flex-direction: column;}
-        @include large{
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+        @include phone{flex-direction: column;}
+        @include tablet{flex-wrap: wrap;}
+        justify-content: space-around;
         .board{
             margin-bottom: 20px;
             background-color: $white;
@@ -110,8 +118,9 @@ footer{@include foot;}
             box-shadow: $shadow;
             height: 255px;
             position: relative;
-            @include tablet{width: 92%;}
-            @include large{width: 45%;}
+            @include phone{width: 92%;}
+            @include tablet{width: 45%;}
+            @include large{width: 22%}
             .new{
                 @include center-element;
                 width: 80px;
@@ -133,11 +142,6 @@ footer{@include foot;}
                 margin: 5px 0 0 15px;
                 font-weight: 100;
             }
-            .fa-heart{
-                position: absolute;
-                right: 25px;
-                bottom: 35px;
-            }
         }
     }
 }
@@ -145,6 +149,7 @@ footer{@include foot;}
 //--------------------------------------Menu--------------------------------------
 main{
     > img{
+        @include phone{height: 200px;}
         @include tablet{height: 250px;}
         @include large{height: 300px;}
     }
@@ -169,10 +174,7 @@ main{
         }
         .card{
             @include large{width: 28%;}
-            &-plan{
-                @include center-element;
-                flex-direction: column; 
-            }
+            @include tablet{margin-bottom: 20px;}
             > h4{
                 margin: 0 0 15px 20px;
                 padding-bottom: 10px;
@@ -181,12 +183,19 @@ main{
                 width: 40px;
                 @include large{margin-left: 0;}
             }
+            &-plan{
+                @include center-element;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            
             section{
                 background-color: $white;                
                 height: 70px;
                 margin-bottom: 15px;
                 border-radius: $border-r - 10px;
                 box-shadow: $shadow;
+                @include phone{width: 90%;}
                 @include tablet{width: 90%;}
                 @include large{width: 100%;}
                 :hover{cursor: pointer;}

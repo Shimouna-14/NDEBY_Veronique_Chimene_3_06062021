@@ -1,0 +1,60 @@
+//--------------Heart--------------
+
+// Heart Home
+@mixin heart-home{
+    position: absolute;
+    right: 25px;
+    bottom: 35px;
+    font-size: 20px;
+}
+
+@mixin heart-l{
+    transition: opacity 200ms;
+    z-index: 1;
+    &:hover{
+        opacity: 0;
+        + .fas{opacity: 1;}
+    }
+}
+@mixin heart-b{
+    background: -webkit-linear-gradient(270deg, $purple 40%, $pink 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: opacity 200ms;
+    opacity: 0;
+}
+
+.board{
+    .far{
+        @include heart-home;
+        @include heart-l;
+    }
+    .heart{
+        @include heart-home;
+        @include heart-b;}      
+}
+
+// Heart Menu
+@mixin heart-menu{
+    position: absolute;
+    top: 36px;
+    right: 40px;
+    font-size: 23px;
+}
+
+.plan{
+    .far{
+        @include heart-menu;
+        @include heart-l;
+    }
+    .heart{
+        @include heart-menu;
+        @include heart-b;
+    }
+}
+
+//--------------Apparition Menu--------------
+
+
+
+//--------------Check--------------
