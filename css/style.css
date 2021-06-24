@@ -130,16 +130,16 @@ header > a {
   opacity: 0;
 }
 
-.card section:first-child {
+.card-plan .plat:first-child {
   animation: opacity 1000ms;
 }
-.card section:nth-child(2) {
+.card-plan .plat:nth-child(2) {
   animation: opacity 1500ms;
 }
-.card section:nth-child(3) {
+.card-plan .plat:nth-child(3) {
   animation: opacity 2000ms;
 }
-.card section:nth-child(4) {
+.card-plan .plat:nth-child(4) {
   animation: opacity 2500ms;
 }
 
@@ -153,10 +153,10 @@ header > a {
     transform: translateY(0);
   }
 }
-footer > ul > li:first-child {
+nav > p:first-child {
   font-weight: bold;
 }
-footer > ul > li:nth-child(2) {
+nav > p:nth-child(2) {
   font-weight: bold;
 }
 
@@ -199,27 +199,29 @@ button::after {
   transition: opacity 250ms;
   border-radius: 25px;
 }
+button a {
+  color: white;
+}
 
 footer {
   height: 195px;
   background-color: #353535;
   color: white;
-  font-family: "Titre";
 }
 footer h3 {
   margin: 0;
   padding: 20px 0 20px 20px;
+  font-family: "Titre";
 }
-footer ul {
-  padding-left: 20px;
-  margin: 0;
+footer nav {
   font-family: "Text";
-  list-style: none;
+  padding-left: 20px;
 }
-footer li {
+footer nav p {
+  margin: 0;
   padding-bottom: 10px;
 }
-footer li > a {
+footer nav p a {
   color: white;
 }
 
@@ -297,7 +299,7 @@ footer li > a {
 }
 @media screen and (max-width: 545px) {
   .function-step .step {
-    width: 88%;
+    width: 80%;
     height: 75px;
     margin-bottom: 25px;
     justify-content: space-around;
@@ -332,31 +334,31 @@ footer li > a {
   color: white;
 }
 
-.restaurant {
+#restaurant {
   flex-direction: column;
   background-color: #f6f6f6;
 }
-.restaurant h3 {
+#restaurant h3 {
   padding: 60px 0 28px 15px;
   margin: 0;
 }
-.restaurant-board {
+#restaurant-board {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-around;
 }
 @media screen and (max-width: 545px) {
-  .restaurant-board {
+  #restaurant-board {
     flex-direction: column;
   }
 }
 @media screen and (max-width: 1023px) and (min-width: 546px) {
-  .restaurant-board {
+  #restaurant-board {
     flex-wrap: wrap;
   }
 }
-.restaurant-board .board {
+#restaurant-board .board {
   margin-bottom: 20px;
   background-color: white;
   border-radius: 25px;
@@ -365,21 +367,21 @@ footer li > a {
   position: relative;
 }
 @media screen and (max-width: 545px) {
-  .restaurant-board .board {
+  #restaurant-board .board {
     width: 92%;
   }
 }
 @media screen and (max-width: 1023px) and (min-width: 546px) {
-  .restaurant-board .board {
+  #restaurant-board .board {
     width: 45%;
   }
 }
 @media screen and (min-width: 1024px) {
-  .restaurant-board .board {
+  #restaurant-board .board {
     width: 22%;
   }
 }
-.restaurant-board .board .new {
+#restaurant-board .board .new {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -392,15 +394,15 @@ footer li > a {
   right: 12px;
   top: 12px;
 }
-.restaurant-board .board img {
+#restaurant-board .board img {
   height: 175px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
-.restaurant-board .board h4 {
+#restaurant-board .board h4 {
   margin: 15px 0 0 15px;
 }
-.restaurant-board .board p {
+#restaurant-board .board p {
   margin: 5px 0 0 15px;
   font-weight: 100;
 }
@@ -469,51 +471,93 @@ footer li > a {
   flex-direction: column;
   overflow: hidden;
 }
-.plan .menu .card section {
-  background-color: white;
+.plan .menu .card-plan .plat {
   height: 70px;
-  margin-bottom: 15px;
+  background-color: white;
   border-radius: 15px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
-}
-@media screen and (max-width: 545px) {
-  .plan .menu .card section {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 1023px) and (min-width: 546px) {
-  .plan .menu .card section {
-    width: 90%;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 @media screen and (min-width: 1024px) {
-  .plan .menu .card section {
+  .plan .menu .card-plan .plat {
     width: 100%;
   }
 }
-.plan .menu .card section :hover {
-  cursor: pointer;
+@media screen and (max-width: 1023px) and (min-width: 546px) {
+  .plan .menu .card-plan .plat {
+    width: 90%;
+  }
 }
-.plan .menu .card section h4 {
+@media screen and (max-width: 545px) {
+  .plan .menu .card-plan .plat {
+    width: 90%;
+  }
+}
+.plan .menu .card-plan .plat section {
+  width: 100%;
+  transition: 500ms ease-in-out;
+}
+.plan .menu .card-plan .plat section h4 {
   margin: 12px 10px 0 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.plan .menu .card section .txt {
+.plan .menu .card-plan .plat section .txt {
   display: flex;
   justify-content: space-between;
 }
-.plan .menu .card section .txt > p:first-child {
+.plan .menu .card-plan .plat section .txt > p:first-child {
   margin: 10px 0 0 15px;
   font-weight: 100;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.plan .menu .card section .txt > p:nth-child(2) {
+.plan .menu .card-plan .plat section .txt > p:nth-child(2) {
   font-weight: 700;
-  margin: 10px 15px 0 0;
+  margin: 10px 15px 0 10px;
+}
+.plan .menu .card-plan .plat .valid {
+  background-color: #99E2D0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 65px;
+  margin-left: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: right;
+  transform: translateX(65px);
+  transition: transform 500ms ease-in-out;
+}
+.plan .menu .card-plan .plat .valid .fa-check-circle {
+  color: white;
+}
+@media screen and (min-width: 1024px) {
+  .plan .menu .card-plan .plat:hover section {
+    width: 80%;
+  }
+}
+.plan .menu .card-plan .plat:hover section + .valid {
+  transform: translateX(0);
+}
+.plan .menu .card-plan .plat:hover section + .valid .fa-check-circle {
+  color: white;
+  animation: turn 500ms forwards ease-in-out;
+}
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 .plan #btn {
   display: flex;

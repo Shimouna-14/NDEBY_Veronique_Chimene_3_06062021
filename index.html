@@ -23,12 +23,11 @@
         <section class="descriptive">
             <h3>Réservez le menu qui vous convient</h3>
             <p>Découvrez des restaurants d'exception, selectionnés par nos soins</p>
-            <button>Explorer nos restaurants</button>
+            <button><a href="#restaurant">Explorer nos restaurants</a></button>
         </section>
         
         <section class="function">
             <h3>Fonctionnement</h3>
-            
             <div class="function-step">
                 <div class="step">
                     <div class="dots">1</div>
@@ -48,11 +47,10 @@
             </div>
         </section>
 
-        <section class="restaurant">
+        <section id="restaurant">
             <h3>Restaurants</h3>
-
-            <div class="restaurant-board">
-                <section class="board">
+            <div id="restaurant-board">
+                <article class="board">
                     <a href="restaurants/la-palette-du-gout.html">
                         <div class="new">Nouveau</div>
                         <img src="img/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
@@ -61,9 +59,9 @@
                         <i class="far fa-heart"></i>
                         <i class="fas fa-heart heart"></i>
                     </a>
-                </section>
+                </article>
 
-                <section class="board">
+                <article class="board">
                     <a href="restaurants/la-note-enchantee.html">
                         <div class="new">Nouveau</div>
                         <img src="img/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée">
@@ -72,9 +70,9 @@
                         <i class="far fa-heart"></i>
                         <i class="fas fa-heart heart"></i>  
                     </a>
-                </section>
+                </article>
 
-                <section class="board">
+                <article class="board">
                     <a href="restaurants/a-la-francaise.html">
                         <img src="img/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française">
                         <h4>À la française</h4>
@@ -82,9 +80,9 @@
                         <i class="far fa-heart"></i>
                         <i class="fas fa-heart heart"></i>
                     </a>
-                </section>
+                </article>
 
-                <section class="board">
+                <article class="board">
                     <a href="restaurants/le-delice-des-sens.html">
                         <img src="img/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
                         <h4>Le délice des sens</h4>
@@ -92,29 +90,19 @@
                         <i class="far fa-heart"></i>
                         <i class="fas fa-heart heart"></i>
                     </a>
-                </section>
+                </article>
             </div>
         </section>
     </main>
 
     <footer>
         <h3>ohmyfood</h3>
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="fas fa-utensils"></i>
-                    Proposer un restaurant
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-hands-helping"></i>
-                    Devenir partenaire
-                </a>
-            </li>
-            <li><a href="#">Mention</a></li>
-            <li><a href="mailto:#">Contact</a></li>
-        </ul>
+        <nav>
+            <p><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></p>
+            <p><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></p>
+            <p><a href="#">Mention</a></p>
+            <p><a href="mailto:#">Contact</a></p>
+        </nav>
     </footer>
 </body>
 </html>
