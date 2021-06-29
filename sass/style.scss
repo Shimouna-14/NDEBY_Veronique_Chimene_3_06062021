@@ -19,10 +19,9 @@ header{
 }
 
 //--------------------------------------Button--------------------------------------
-button{
+.btn{
+    @include center-element;
     @include btn;
-    box-shadow: $shadow;
-    a{color: $white}
 }
 
 //--------------------------------------Footer--------------------------------------
@@ -44,12 +43,16 @@ footer{@include foot;}
     flex-direction: column;
     h3{
         text-align: center;
-        margin: 0px 65px;
+        margin: 0;
+        @include tablet{width: 300px;}
+        @include phone{width: 300px;}
     }
     p{
         text-align: center;
-        margin: 20px 20px 30px 20px;
+        margin: 20px 0 30px 0;
         font-weight: 100;
+        @include tablet{width: 335px;}
+        @include phone{width: 335px;}
     }
 }
 
@@ -156,6 +159,11 @@ main{
     }
 }
 
+#plan-size{
+    @include large{height: 637px};
+    @include tablet{height: 1300px;}
+    @include phone{height: 1260px;}
+}
 .plan{
     background-color: $l-gray;
     border-top-left-radius: $border-r;
@@ -163,6 +171,9 @@ main{
     margin-top: -50px;
     position: relative;
     z-index: 2;
+    @include large{height: 595px;}
+    @include tablet{height: 1195px;}
+    @include phone{height: 1175px;}
     h2{
         margin: 0;
         padding: 30px 35px 35px 20px;
@@ -175,8 +186,18 @@ main{
         }
         .card{
             @include large{width: 28%;}
-            @include tablet{margin-bottom: 20px;}
+            @include tablet{
+                @include center-element;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            @include phone{
+                @include center-element;
+                flex-direction: column;
+            }
             > h4{
+                display: flex;
+                align-self: flex-start;
                 margin: 0 0 15px 20px;
                 padding-bottom: 10px;
                 font-weight: 100;
@@ -184,56 +205,54 @@ main{
                 width: 40px;
                 @include large{margin-left: 0;}
             }
-            &-plan{
-                @include center-element;
-                flex-direction: column;
+            .plat{
+                height: 70px;
+                background-color: $white;
+                border-radius: $border-r - 10px;
+                box-shadow: $shadow;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
                 overflow: hidden;
-                .plat{
-                    height: 70px;
-                    background-color: $white;
-                    border-radius: $border-r - 10px;
-                    box-shadow: $shadow;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    overflow: hidden;
-                    margin-bottom: 15px;
-                    cursor: pointer;
-                    @include large{width: 100%;}
-                    @include tablet{width: 90%;}
-                    @include phone{width: 90%;}
-                    section{
-                        width: 100%;
-                        transition: 500ms ease-in-out;
-                        h4{
-                            margin: 12px 10px 0 15px;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            }
-                        .txt{@include price;}
-                    }
-                    .valid{
-                        background-color: #99E2D0;
-                        border-top-right-radius: $border-r - 10px;
-                        border-bottom-right-radius: $border-r - 10px;
-                        width: 65px;
-                        margin-left: 14px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        transform-origin: right;
-                        transform: translateX(65px);
-                        transition: transform 500ms ease-in-out;
-                        & .fa-check-circle{color: white;}
-                    }
-                    @include check;
+                margin-bottom: 20px;
+                cursor: pointer;
+                position: relative;
+                @include large{width: 100%;}
+                @include tablet{width: 90%;}
+                @include phone{width: 90%;}
+                section{
+                    width: 100%;
+                    transition: 400ms ease-in-out;
+                    h4{
+                        margin: 12px 10px 0 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        }
+                    .txt{@include price;}
                 }
+                .valid{
+                    @include center-element;
+                    background-color: #99E2D0;
+                    border-top-right-radius: $border-r - 10px;
+                    border-bottom-right-radius: $border-r - 10px;
+                    width: 65px;
+                    height: 70px;
+                    transform: scaleX(0);
+                    position: absolute;
+                    right: 0;
+                    transform-origin: right;
+                    transition: transform 400ms ease-in-out;
+                    & .fa-check-circle{color: $white;}
+                }
+                @include check;
             }
         }
     }
-    #btn{
+    .btn{
         @include center-element;
-        padding: 50px 0;
+        @include large{margin: 50px auto;}
+        @include tablet{margin: 30px auto;}
+        @include phone{margin: 35px auto}
     }
 }

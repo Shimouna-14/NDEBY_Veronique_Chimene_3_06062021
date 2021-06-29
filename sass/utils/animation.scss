@@ -17,8 +17,12 @@
     }
 }
 @mixin heart-b{
+    background: linear-gradient(270deg, $purple 40%, $pink 100%);
+    background: -moz-linear-gradient(270deg, $purple 40%, $pink 100%);
     background: -webkit-linear-gradient(270deg, $purple 40%, $pink 100%);
     background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: opacity 200ms;
     opacity: 0;
@@ -55,11 +59,11 @@
 
 //--------------Apparition Menu--------------
 
-.card-plan{
-    .plat:first-child{animation: opacity 1000ms;}
-    .plat:nth-child(2){animation: opacity 1500ms;}
-    .plat:nth-child(3){animation: opacity 2000ms;}
-    .plat:nth-child(4){animation: opacity 2500ms;}
+.card{
+    .plat:nth-child(2){animation: opacity 1000ms;}
+    .plat:nth-child(3){animation: opacity 1500ms;}
+    .plat:nth-child(4){animation: opacity 2000ms;}
+    .plat:nth-child(5){animation: opacity 2500ms;}
 }
 @keyframes opacity{
     from{
@@ -77,10 +81,12 @@
     &:hover{
         section{
             @include large{width: 80%;}
+            @include tablet{width: 88%;}
+            @include phone{width: 82%;}
             + .valid{
-                transform: translateX(0);
+                transform: scaleX(1);
                 .fa-check-circle{
-                    color: white;
+                    color: $white;
                     animation: turn 500ms forwards ease-in-out;
                 }
             }
@@ -90,5 +96,77 @@
     @keyframes turn{
         from{transform: rotate(0deg);}
         to{transform: rotate(-360deg);}
+    }
+}
+
+//--------------Loading spin--------------
+.wait{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    opacity: 0.9;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: page 1000ms forwards 1600ms;
+    transform-origin: right;
+    .name{
+        display: flex;
+        h1{
+            font-family: "Titre";
+            animation: appear 1000ms forwards;
+            opacity: 0;
+        }
+    }
+    .img{
+        i{
+            animation: zoom 500ms forwards;
+            margin: 0 10px;
+            transform: scale(0);
+        }
+    }
+}
+
+.name{
+    h1:first-child{animation-delay: 50ms;}
+    h1:nth-child(2){animation-delay: 500ms;}
+    h1:nth-child(3){animation-delay: 1000ms;}
+}
+
+.img{
+    i:first-child{animation-delay: 50ms;}
+    i:nth-child(2){animation-delay: 500ms;}
+    i:nth-child(3){animation-delay: 1000ms;}
+}
+
+@keyframes zoom {
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
+}
+
+@keyframes appear{
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes page {
+    0%{
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scaleX(0);
     }
 }

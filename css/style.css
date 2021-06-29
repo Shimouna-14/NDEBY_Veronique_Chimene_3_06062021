@@ -97,8 +97,12 @@ header > a {
   right: 25px;
   bottom: 35px;
   font-size: 20px;
+  background: linear-gradient(270deg, #9356DC 40%, #FF79DA 100%);
+  background: -moz-linear-gradient(270deg, #9356DC 40%, #FF79DA 100%);
   background: -webkit-linear-gradient(270deg, #9356DC 40%, #FF79DA 100%);
   background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: opacity 200ms;
   opacity: 0;
@@ -123,23 +127,27 @@ header > a {
   top: 36px;
   right: 40px;
   font-size: 23px;
+  background: linear-gradient(270deg, #9356DC 40%, #FF79DA 100%);
+  background: -moz-linear-gradient(270deg, #9356DC 40%, #FF79DA 100%);
   background: -webkit-linear-gradient(270deg, #9356DC 40%, #FF79DA 100%);
   background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: opacity 200ms;
   opacity: 0;
 }
 
-.card-plan .plat:first-child {
+.card .plat:nth-child(2) {
   animation: opacity 1000ms;
 }
-.card-plan .plat:nth-child(2) {
+.card .plat:nth-child(3) {
   animation: opacity 1500ms;
 }
-.card-plan .plat:nth-child(3) {
+.card .plat:nth-child(4) {
   animation: opacity 2000ms;
 }
-.card-plan .plat:nth-child(4) {
+.card .plat:nth-child(5) {
   animation: opacity 2500ms;
 }
 
@@ -151,6 +159,83 @@ header > a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+.wait {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  opacity: 0.9;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: page 1000ms forwards 1600ms;
+  transform-origin: right;
+}
+.wait .name {
+  display: flex;
+}
+.wait .name h1 {
+  font-family: "Titre";
+  animation: appear 1000ms forwards;
+  opacity: 0;
+}
+.wait .img i {
+  animation: zoom 500ms forwards;
+  margin: 0 10px;
+  transform: scale(0);
+}
+
+.name h1:first-child {
+  animation-delay: 50ms;
+}
+.name h1:nth-child(2) {
+  animation-delay: 500ms;
+}
+.name h1:nth-child(3) {
+  animation-delay: 1000ms;
+}
+
+.img i:first-child {
+  animation-delay: 50ms;
+}
+.img i:nth-child(2) {
+  animation-delay: 500ms;
+}
+.img i:nth-child(3) {
+  animation-delay: 1000ms;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes page {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
   }
 }
 nav > p:first-child {
@@ -168,12 +253,14 @@ header {
   align-items: center;
 }
 
-button {
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 218px;
   height: 50px;
   border-radius: 25px;
   border: none;
-  color: white;
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
   font-family: "Text";
   font-size: 16px;
@@ -183,10 +270,13 @@ button {
   transition: background 250ms;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
 }
-button:hover::after {
+.btn a {
+  color: white;
+}
+.btn:hover::after {
   opacity: 1;
 }
-button::after {
+.btn::after {
   content: "";
   position: absolute;
   top: 0;
@@ -198,9 +288,6 @@ button::after {
   z-index: -1;
   transition: opacity 250ms;
   border-radius: 25px;
-}
-button a {
-  color: white;
 }
 
 footer {
@@ -247,12 +334,32 @@ footer nav p a {
 }
 .descriptive h3 {
   text-align: center;
-  margin: 0px 65px;
+  margin: 0;
+}
+@media screen and (max-width: 1023px) and (min-width: 546px) {
+  .descriptive h3 {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 545px) {
+  .descriptive h3 {
+    width: 300px;
+  }
 }
 .descriptive p {
   text-align: center;
-  margin: 20px 20px 30px 20px;
+  margin: 20px 0 30px 0;
   font-weight: 100;
+}
+@media screen and (max-width: 1023px) and (min-width: 546px) {
+  .descriptive p {
+    width: 335px;
+  }
+}
+@media screen and (max-width: 545px) {
+  .descriptive p {
+    width: 335px;
+  }
 }
 
 @media screen and (max-width: 1023px) and (min-width: 546px) {
@@ -423,6 +530,22 @@ footer nav p a {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  #plan-size {
+    height: 637px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 546px) {
+  #plan-size {
+    height: 1300px;
+  }
+}
+@media screen and (max-width: 545px) {
+  #plan-size {
+    height: 1260px;
+  }
+}
+
 .plan {
   background-color: #f6f6f6;
   border-top-left-radius: 25px;
@@ -430,6 +553,21 @@ footer nav p a {
   margin-top: -50px;
   position: relative;
   z-index: 2;
+}
+@media screen and (min-width: 1024px) {
+  .plan {
+    height: 595px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 546px) {
+  .plan {
+    height: 1195px;
+  }
+}
+@media screen and (max-width: 545px) {
+  .plan {
+    height: 1175px;
+  }
 }
 .plan h2 {
   margin: 0;
@@ -449,10 +587,24 @@ footer nav p a {
 }
 @media screen and (max-width: 1023px) and (min-width: 546px) {
   .plan .menu .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-bottom: 20px;
   }
 }
+@media screen and (max-width: 545px) {
+  .plan .menu .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 .plan .menu .card > h4 {
+  display: flex;
+  align-self: flex-start;
   margin: 0 0 15px 20px;
   padding-bottom: 10px;
   font-weight: 100;
@@ -464,14 +616,7 @@ footer nav p a {
     margin-left: 0;
   }
 }
-.plan .menu .card-plan {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
-}
-.plan .menu .card-plan .plat {
+.plan .menu .card .plat {
   height: 70px;
   background-color: white;
   border-radius: 15px;
@@ -480,74 +625,87 @@ footer nav p a {
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   cursor: pointer;
+  position: relative;
 }
 @media screen and (min-width: 1024px) {
-  .plan .menu .card-plan .plat {
+  .plan .menu .card .plat {
     width: 100%;
   }
 }
 @media screen and (max-width: 1023px) and (min-width: 546px) {
-  .plan .menu .card-plan .plat {
+  .plan .menu .card .plat {
     width: 90%;
   }
 }
 @media screen and (max-width: 545px) {
-  .plan .menu .card-plan .plat {
+  .plan .menu .card .plat {
     width: 90%;
   }
 }
-.plan .menu .card-plan .plat section {
+.plan .menu .card .plat section {
   width: 100%;
-  transition: 500ms ease-in-out;
+  transition: 400ms ease-in-out;
 }
-.plan .menu .card-plan .plat section h4 {
-  margin: 12px 10px 0 15px;
+.plan .menu .card .plat section h4 {
+  margin: 12px 10px 0 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.plan .menu .card-plan .plat section .txt {
+.plan .menu .card .plat section .txt {
   display: flex;
   justify-content: space-between;
 }
-.plan .menu .card-plan .plat section .txt > p:first-child {
+.plan .menu .card .plat section .txt > p:first-child {
   margin: 10px 0 0 15px;
   font-weight: 100;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.plan .menu .card-plan .plat section .txt > p:nth-child(2) {
+.plan .menu .card .plat section .txt > p:nth-child(2) {
   font-weight: 700;
   margin: 10px 15px 0 10px;
 }
-.plan .menu .card-plan .plat .valid {
+.plan .menu .card .plat .valid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #99E2D0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   width: 65px;
-  margin-left: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 70px;
+  transform: scaleX(0);
+  position: absolute;
+  right: 0;
   transform-origin: right;
-  transform: translateX(65px);
-  transition: transform 500ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
-.plan .menu .card-plan .plat .valid .fa-check-circle {
+.plan .menu .card .plat .valid .fa-check-circle {
   color: white;
 }
 @media screen and (min-width: 1024px) {
-  .plan .menu .card-plan .plat:hover section {
+  .plan .menu .card .plat:hover section {
     width: 80%;
   }
 }
-.plan .menu .card-plan .plat:hover section + .valid {
-  transform: translateX(0);
+@media screen and (max-width: 1023px) and (min-width: 546px) {
+  .plan .menu .card .plat:hover section {
+    width: 88%;
+  }
 }
-.plan .menu .card-plan .plat:hover section + .valid .fa-check-circle {
+@media screen and (max-width: 545px) {
+  .plan .menu .card .plat:hover section {
+    width: 82%;
+  }
+}
+.plan .menu .card .plat:hover section + .valid {
+  transform: scaleX(1);
+}
+.plan .menu .card .plat:hover section + .valid .fa-check-circle {
   color: white;
   animation: turn 500ms forwards ease-in-out;
 }
@@ -559,11 +717,25 @@ footer nav p a {
     transform: rotate(-360deg);
   }
 }
-.plan #btn {
+.plan .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
+}
+@media screen and (min-width: 1024px) {
+  .plan .btn {
+    margin: 50px auto;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 546px) {
+  .plan .btn {
+    margin: 30px auto;
+  }
+}
+@media screen and (max-width: 545px) {
+  .plan .btn {
+    margin: 35px auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
