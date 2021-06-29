@@ -160,9 +160,9 @@ main{
 }
 
 #plan-size{
-    @include large{height: 637px};
-    @include tablet{height: 1300px;}
-    @include phone{height: 1260px;}
+    @include large{height: 640px};
+    @include tablet{height: 1315px;}
+    @include phone{height: 1270px;}
 }
 .plan{
     background-color: $l-gray;
@@ -171,9 +171,9 @@ main{
     margin-top: -50px;
     position: relative;
     z-index: 2;
-    @include large{height: 595px;}
-    @include tablet{height: 1195px;}
-    @include phone{height: 1175px;}
+    @include large{height: 560px;}
+    @include tablet{height: 1210px;}
+    @include phone{height: 1172px;}
     h2{
         margin: 0;
         padding: 30px 35px 35px 20px;
@@ -251,8 +251,8 @@ main{
     }
     .btn{
         @include center-element;
-        @include large{margin: 50px auto;}
-        @include tablet{margin: 30px auto;}
+        @include large{margin: 35px auto;}
+        @include tablet{margin: 35px auto;}
         @include phone{margin: 35px auto}
     }
 }

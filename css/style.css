@@ -532,17 +532,17 @@ footer nav p a {
 
 @media screen and (min-width: 1024px) {
   #plan-size {
-    height: 637px;
+    height: 640px;
   }
 }
 @media screen and (max-width: 1023px) and (min-width: 546px) {
   #plan-size {
-    height: 1300px;
+    height: 1315px;
   }
 }
 @media screen and (max-width: 545px) {
   #plan-size {
-    height: 1260px;
+    height: 1270px;
   }
 }
 
@@ -556,17 +556,17 @@ footer nav p a {
 }
 @media screen and (min-width: 1024px) {
   .plan {
-    height: 595px;
+    height: 560px;
   }
 }
 @media screen and (max-width: 1023px) and (min-width: 546px) {
   .plan {
-    height: 1195px;
+    height: 1210px;
   }
 }
 @media screen and (max-width: 545px) {
   .plan {
-    height: 1175px;
+    height: 1172px;
   }
 }
 .plan h2 {
@@ -724,12 +724,12 @@ footer nav p a {
 }
 @media screen and (min-width: 1024px) {
   .plan .btn {
-    margin: 50px auto;
+    margin: 35px auto;
   }
 }
 @media screen and (max-width: 1023px) and (min-width: 546px) {
   .plan .btn {
-    margin: 30px auto;
+    margin: 35px auto;
   }
 }
 @media screen and (max-width: 545px) {
