@@ -161,10 +161,10 @@ header > a {
     transform: translateY(0);
   }
 }
-.wait {
+.loading {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   background-color: white;
   opacity: 0.9;
@@ -176,15 +176,15 @@ header > a {
   animation: page 1000ms forwards 1600ms;
   transform-origin: right;
 }
-.wait .name {
+.loading .name {
   display: flex;
 }
-.wait .name h1 {
+.loading .name h1 {
   font-family: "Titre";
   animation: appear 1000ms forwards;
   opacity: 0;
 }
-.wait .img i {
+.loading .img i {
   animation: zoom 500ms forwards;
   margin: 0 10px;
   transform: scale(0);
