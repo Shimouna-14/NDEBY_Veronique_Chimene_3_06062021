@@ -43,12 +43,8 @@ header > a {
   margin-right: 15px;
 }
 
-.fa-mobile-alt, .fa-list-ul {
+.step i {
   color: #7e7e7e;
-}
-
-.fa-store {
-  color: #9356DC;
 }
 
 @media screen and (max-width: 1023px) and (min-width: 546px) {
@@ -406,6 +402,9 @@ footer nav p a {
 }
 .function-step .step:hover {
   background-color: #f4eefc;
+}
+.function-step .step:hover i {
+  color: #9356DC;
 }
 @media screen and (max-width: 545px) {
   .function-step .step {

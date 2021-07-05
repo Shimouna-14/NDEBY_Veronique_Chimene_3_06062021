@@ -71,7 +71,10 @@ footer{@include foot;}
             background-color: $l-gray;
             border-radius: $border-r;
             position: relative;
-            &:hover{background-color: lighten($purple, 36%);}
+            &:hover{
+                background-color: lighten($purple, 36%);
+                i{color: $purple;}
+            }
             @include phone{
                 width: 80%;
                 height: 75px;
