@@ -404,6 +404,9 @@ footer nav p a {
   border-radius: 25px;
   position: relative;
 }
+.function-step .step:hover {
+  background-color: #f4eefc;
+}
 @media screen and (max-width: 545px) {
   .function-step .step {
     width: 80%;
